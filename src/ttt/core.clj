@@ -25,15 +25,15 @@
         (do
           (view/print-board board)
           (if (= :draw winner-or-draw)
-            (println "A draw!")
-            (println winner-or-draw "wins"))
-          (println "Goodbye"))
+            (println "Rysunek!")
+            (println winner-or-draw "wygrywa"))
+          (println "Do widzenia"))
         (let [player (first turns)]
           (do (view/print-board board)
-              (println "Player" player "> ")
+              (println "Gracz" player "> ")
               (let [next-move (read-string (read-line))
                     new-board (game/place-piece board player next-move)]
                 (if (not= new-board board)
                   (recur new-board (rest turns))
-                  (do (println "Illegal move")
+                  (do (println "Niedozwolony ruch")
                       (recur board turns))))))))))
