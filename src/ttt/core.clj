@@ -11,7 +11,7 @@
 (def turns (cycle players))
 
 (defn board []
-  "Zwróć planszę ttt.core / size"
+  "Zwróć  planszę ttt.core / size"
   (vec (repeat size (vec (repeat size nil)))))
 
 (defn -main
